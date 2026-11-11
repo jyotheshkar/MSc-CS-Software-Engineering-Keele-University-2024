@@ -9,7 +9,11 @@ import re
 # Function to scrape text data from a webpage
 def scrape_text(url):
     # Send a GET request to the URL
-    response = requests.get(url)
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+    except requests.RequestException:
+        return None
     
     # Check if the request was successful
     if response.status_code == 200:
@@ -108,4 +112,6 @@ def speak(text):
     engine.runAndWait()
 
 # Call the function to start listening for speech input
-get_speech_input()
+if __name__ == "__main__":
+    get_speech_input()
+
