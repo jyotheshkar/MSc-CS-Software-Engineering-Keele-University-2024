@@ -1,0 +1,15 @@
+# Source-derived main assistant inventory, 2026-11-14. Not a lockfile.
+# Proposed target: Windows/Python 3.12; installation is not verified.
+# Tkinter comes separately with the Python distribution.
+SpeechRecognition
+PyAudio
+pyttsx3
+spacy
+pyjokes
+PyAutoGUI
+requests
+# Standalone web/conversation modules:
+beautifulsoup4
+wikipedia
+PyGetWindow
+# Then: python -m spacy download en_core_web_sm

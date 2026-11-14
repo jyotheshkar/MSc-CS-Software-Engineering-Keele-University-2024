@@ -103,7 +103,7 @@ def scrape_website(url, root):
         text_output.config(state='disabled')
         speak("Please enter a website URL.")
 
-    root.destroy()  # Close the GUI after scraping
+    # Keep the result available to read and allow another URL; the user closes the window.
 
 # Function to convert text to speech
 def speak(text):
@@ -114,4 +114,5 @@ def speak(text):
 # Call the function to start listening for speech input
 if __name__ == "__main__":
     get_speech_input()
+
 
