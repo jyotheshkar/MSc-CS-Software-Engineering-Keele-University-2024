@@ -1,3 +1,5 @@
+# Software Engineering - CSC-40066 - Keele University
+
 # Local API Configuration
 
 Weather and location-time features now require a locally supplied OPENWEATHERMAP_API_KEY. Read [SECURITY.md](SECURITY.md) before running the prototype; current-source cleanup does not resolve historical credential exposure.
@@ -69,3 +71,7 @@ This project is licensed under the MIT License.
 ## Architecture and maintained workflow
 
 See [technical architecture, diagrams, engineering decisions, checks and scaling limits](docs/ARCHITECTURE.md). Maintenance dated 11 November 2026 is separate from the original learning/coursework source.
+
+## University module reference
+
+Official module title and code: [Keele University MSc Computer Science programme specification, 2023/24](https://www.keele.ac.uk/media/keeleuniversity/sas/qa/pgtprogrammespecifications/pgtprogspecs2023-24/Programme-Specification-Computer-Science-Taught-Masters-2023-24.pdf). Original project material and later maintenance remain distinguished below.
