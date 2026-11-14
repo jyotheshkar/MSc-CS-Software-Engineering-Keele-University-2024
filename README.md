@@ -1,79 +1,45 @@
-# Software Engineering - CSC-40066 - Keele University
+# Novah · MSc Computer Science
 
-# Local API Configuration
+**Software Engineering · Keele University · 2023/24 · 15 CATS · final module result: 61%**
 
-Weather and location-time features now require a locally supplied OPENWEATHERMAP_API_KEY. Read [SECURITY.md](SECURITY.md) before running the prototype; current-source cleanup does not resolve historical credential exposure.
+A team coursework prototype for voice-driven desktop assistance. Python modules explore speech input/output, spaCy command parsing, Windows application control, weather/time queries, notes and browsing. Separate camera experiments explore face/hand interaction. Reproducibility and security limits are documented.
 
-# Novah: Voice-Based Desktop Automation
+[Academic context](docs/ACADEMIC-CONTEXT.md) · [Presentation text](docs/original/novah-presentation-redacted.md) · [Local setup](docs/RUNBOOK.md) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/VERIFICATION.md)
 
-Novah is a desktop application that empowers individuals with disabilities by providing seamless computer access through voice commands and natural language processing. With Novah, users can effortlessly open applications, write emails, access the weather and time, and much more—all hands-free.
+## Engineering evidence
 
-## Features
+| Area | Inspectable evidence |
+| --- | --- |
+| Team delivery | Historical [Kanban account](KANBAN.md), MoSCoW priorities and group presentation; completion claims are historical self-report. |
+| Object-oriented Python | VoiceAssistant/Novah classes and feature modules. |
+| Speech/NLP | SpeechRecognition, pyttsx3 and spaCy; no deployed LLM agent is established by these. |
+| Desktop integration | Windows automation through PyAutoGUI/ctypes; local files and Tkinter views. |
+| Integration resilience | Bounded web requests, environment-based weather configuration and isolated regressions. |
+| Critical evaluation | Honest [testing and release gaps](docs/VERIFICATION.md). |
 
-- **Voice Navigation and Desktop Automation**: Open any desktop application and navigate seamlessly using only voice commands.
-- **Natural Language Processing**: Communicate with Novah through intuitive voice commands.
-- **Multifactor Authentication**: Ensure security with hand and face recognition.
-- **Weather and Time API Integration**: Get real-time weather and time updates.
-- **Fun Elements**: Enjoy jokes, notes management, and YouTube searches.
+## Repository map
 
-## Getting Started
+| Path | Purpose |
+| --- | --- |
+| `Nova Software/` | Main assistant and standalone feature experiments; not every module is wired into main.py. |
+| `Nova Authentication/` | Camera coursework experiments, not certified authentication. |
+| `Unit and Integration Testing/` | Historical test artifacts; some imports/symbols no longer match this tree. |
+| `tests/` | Maintained dependency-isolated regressions. |
+| `index.html`, CSS and JavaScript | Historical promotional page with missing assets/incomplete navigation, not an application download. |
+| `docs/original/` | Official brief and reviewed NOVAH presentation text. |
 
-### Prerequisites
+## Start with the checks
 
-- Python 3.8+
-- Pip package manager
+```sh
+git clone https://github.com/jyotheshkar/MSc-CS-Software-Engineering-Keele-University-2024.git
+cd MSc-CS-Software-Engineering-Keele-University-2024
+python -m unittest discover -s tests -v
+```
 
-### Installation
+Follow the [runbook](docs/RUNBOOK.md) for a source-based desktop attempt. No prebuilt installer, successful full desktop run or supported release matrix is supplied. Review [security notes](SECURITY.md) before using microphone, camera or OS automation.
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/novah.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd novah
-    ```
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## Authorship and academic year
 
-### Usage
+This is a team project retained in Jyothesh Karnam's portfolio. A reliable per-person contribution ledger was not supplied, so the entire implementation is not attributed solely to him. The final **module** mark of 61% was checked against the owner's private transcript.
 
-To start the Novah application:
-
-1. Ensure your microphone is properly configured and accessible.
-2. Run the main application script:
-    ```bash
-    python main.py
-    ```
-3. Follow the voice prompts to start navigating the desktop, making notes, managing folders, and more.
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`.
-3. Commit your changes: `git commit -m "Add new feature"`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgments
-
-- The team members for their dedication to building Novah.
-- Open-source projects and Python modules that made this possible.
-
-## Architecture and maintained workflow
-
-See [technical architecture, diagrams, engineering decisions, checks and scaling limits](docs/ARCHITECTURE.md). Maintenance dated 11 November 2026 is separate from the original learning/coursework source.
-
-## University module reference
-
-Official module title and code: [Keele University MSc Computer Science programme specification, 2023/24](https://www.keele.ac.uk/media/keeleuniversity/sas/qa/pgtprogrammespecifications/pgtprogspecs2023-24/Programme-Specification-Computer-Science-Taught-Masters-2023-24.pdf). Original project material and later maintenance remain distinguished below.
-
-**Year provenance:** The `2024` suffix denotes the original Keele MSc academic year **2023/24**. Later uploads and portfolio maintenance retain their own dates; the suffix does not date those later changes.
+Keele's [2023/24 programme specification](https://www.keele.ac.uk/media/keeleuniversity/sas/qa/pgtprogrammespecifications/pgtprogspecs2023-24/Programme-Specification-Computer-Science-Taught-Masters-2023-24.pdf) confirms title and credits. The `2024` suffix identifies that academic year. November 2026 AI-assisted maintenance is recorded separately in [provenance](docs/PROVENANCE.md). No repository-wide licence file is present in the retrieved tree; earlier README references to MIT are not an established licence grant.
